@@ -3,7 +3,7 @@
     --bk-gray: #f5f5f5;
     --icon-bk-gray: #ececec;
     --text-gray: #b1b1b1;
-    --footer-bk:#1b1b1b;
+    --footer-bk: #1b1b1b;
 }
 
 a {
@@ -81,11 +81,12 @@ ul {
     color: black;
 }
 
-.carousel-caption h2{
+.carousel-caption h2 {
     font-size: 4rem;
     letter-spacing: .25rem;
 }
-.carousel-caption p{
+
+.carousel-caption p {
     font-size: 1.4rem;
 }
 
@@ -226,11 +227,11 @@ ul {
 .products {
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
 }
 
 .products .product {
     position: relative;
+    padding: 15px;
 }
 
 .product-thumb {
@@ -258,8 +259,8 @@ span.onsale {
     width: 100px;
     z-index: 2;
     border-radius: 0;
-    -webkit-transform: rotate(45deg) translateZ(0) scale(1,1);
-    transform: rotate(45deg) translateZ(0) scale(1,1);
+    -webkit-transform: rotate(45deg) translateZ(0) scale(1, 1);
+    transform: rotate(45deg) translateZ(0) scale(1, 1);
     -webkit-font-smoothing: subpixel-antialiased;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -273,8 +274,8 @@ span.onsale {
     color: white;
     left: 50%;
     border-color: white;
-    margin: 0!important;
-    transform: translate(-50%,0);
+    margin: 0 !important;
+    transform: translate(-50%, 0);
     visibility: hidden;
     opacity: 0;
 }
@@ -305,7 +306,7 @@ span.onsale {
     margin-top: 30px;
 }
 
-.footer-navigation{
+.footer-navigation {
     margin-bottom: 10px;
 }
 
@@ -314,7 +315,65 @@ span.onsale {
     font-weight: 400;
     text-transform: uppercase;
 }
+
 .footer-navigation .nav-link:hover {
     color: var(--main-color);
     font-weight: 800;
+}
+
+/* goods */
+.shop-categories-nav {
+    background-color: black;
+}
+
+.breadcrumb {
+    display: flex;
+    padding: .75rem 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    background: none;
+    border: 0;
+}
+
+.breadcrumb-item a {
+    color: white;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--main-color);
+}
+
+.breadcrumb .active {
+    color: var(--text-gray);
+}
+
+.shop-pagination {
+    padding: 15px 0 0;
+}
+
+.pagination {
+    position: relative;
+    padding-top: 40px;
+    margin: 30px auto 40px;
+}
+
+.pagination:before {
+    content: '';
+    width: 170px;
+    height: 5px;
+    background: var(--icon-bk-gray);
+    position: absolute;
+    top: 1px;
+    left: 50%;
+    margin-left: -85px;
+}
+
+.pagination>li+li {
+    margin-left: 70px;
+}
+
+.pagination .active a {
+    color: var(--text-gray);
+    background: 0 0;
+    border: none;
 }

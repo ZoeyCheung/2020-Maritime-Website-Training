@@ -2,8 +2,6 @@
 ## 2020 海运网站实训
 ### day1：网站环境搭建 - 4学时
 
-### day1：网站环境搭建 - 4学时
-
 1. PHPstudy([官网](https://m.xp.cn/))
 2. thinkPHP([官网](http://www.thinkphp.cn/))
 3. 模板下载和使用（[Bootstrap](https://www.bootcss.com/)）
