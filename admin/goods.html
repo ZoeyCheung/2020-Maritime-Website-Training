@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>E-commerce Goods Admin</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-4.2.1.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!-- Feathericon CSS -->
+	<link rel="stylesheet" href="assets/css/feathericon.min.css">
+
+	<!-- Datatables CSS -->
+	<link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!--[if lt IE 9]>
+			<script src="assets/js/html5shiv.min.js"></script>
+			<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- Header -->
+		<div class="header">
+
+			<!-- Logo -->
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<i class="fa fa-grav"></i>
+					<strong>E-commerce</strong>
+				</a>
+				<a href="index.html" class="logo logo-small">
+					<i class="fa fa-grav"></i>
+				</a>
+			</div>
+			<!-- /Logo -->
+
+			<a href="javascript:void(0);" id="toggle_btn">
+				<i class="fe fe-text-align-left"></i>
+			</a>
+
+			<!-- Mobile Menu Toggle -->
+			<a class="mobile_btn" id="mobile_btn">
+				<i class="fa fa-bars"></i>
+			</a>
+			<!-- /Mobile Menu Toggle -->
+
+			<!-- Header Right Menu -->
+			<ul class="nav user-menu">
+				<!-- User Menu -->
+				<li class="nav-item dropdown has-arrow">
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+						<span class="user-img"><img class="rounded-circle" src="assets/img/profiles/avatar-12.jpg"
+								width="31" alt="Ryan Taylor"></span>
+					</a>
+					<div class="dropdown-menu">
+						<div class="user-header">
+							<div class="avatar avatar-sm">
+								<img src="assets/img/profiles/avatar-12.jpg" alt="User Image"
+									class="avatar-img rounded-circle">
+							</div>
+							<div class="user-text">
+								<h6>Allen Davis</h6>
+								<p class="text-muted mb-0">Administrator</p>
+							</div>
+						</div>
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="settings.html">Settings</a>
+						<a class="dropdown-item" href="login.html">Logout</a>
+					</div>
+				</li>
+				<!-- /User Menu -->
+
+			</ul>
+			<!-- /Header Right Menu -->
+
+		</div>
+		<!-- /Header -->
+
+		<!-- Sidebar -->
+		<div class="sidebar" id="sidebar">
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<li class="menu-title">
+							<span><i class="fe fe-home"></i> Main</span>
+						</li>
+						<li class="active">
+							<a href="index.html"><span>Dashboard</span></a>
+						</li>
+						<li>
+							<a href="goods.html"><span>Goods</span></a>
+						</li>
+						<li>
+							<a href="users.html"><span>Users</span></a>
+						</li>
+						<li>
+							<a href="categories.html"><span>Categories</span></a>
+						</li>
+						<li>
+							<a href="settings.html"><span>Settings</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /Sidebar -->
+
+		<!-- Page Wrapper -->
+		<div class="page-wrapper">
+			<div class="content container-fluid">
+
+				<!-- Page Header -->
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="page-title">Goods Management</h3>
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+								<li class="breadcrumb-item active">Goods Management</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /Page Header -->
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="datatable table table-hover table-center mb-0">
+										<thead>
+											<tr>
+												<th>Invoice Number</th>
+												<th>Mentee ID</th>
+												<th>Mentee Name</th>
+												<th>Total Amount</th>
+												<th>Created Date</th>
+												<th class="text-center">Status</th>
+												<th class="text-center">Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><a href="invoice.html">#IN0001</a></td>
+												<td>#01</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user.jpg" alt="User Image"></a>
+														<a href="profile.html">Jonathan Doe </a>
+													</h2>
+												</td>
+												<td>$100.00</td>
+												<td>9 Sep 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0002</a></td>
+												<td>#02</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user1.jpg" alt="User Image"></a>
+														<a href="profile.html">Julie Pennington </a>
+													</h2>
+												</td>
+												<td>$200.00</td>
+												<td>29 Oct 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0003</a></td>
+												<td>#03</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user2.jpg" alt="User Image"></a>
+														<a href="profile.html">Tyrone Roberts</a>
+													</h2>
+												</td>
+												<td>$250.00</td>
+												<td>25 Sep 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0004</a></td>
+												<td>#04</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user3.jpg" alt="User Image"></a>
+														<a href="profile.html">Allen Davis </a>
+													</h2>
+												</td>
+												<td>$150.00</td>
+												<td>9 Oct 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0005</a></td>
+												<td>#05</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user4.jpg" alt="User Image"></a>
+														<a href="profile.html">Patricia Manzi </a>
+													</h2>
+												</td>
+												<td>$350.00</td>
+												<td>19 Nov 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0006</a></td>
+												<td>#06</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user5.jpg" alt="User Image"></a>
+														<a href="profile.html">Elsie Gilley</a>
+													</h2>
+												</td>
+												<td>$300.00</td>
+												<td>12 Oct 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0007</a></td>
+												<td>#07</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user11.jpg" alt="User Image"></a>
+														<a href="profile.html"> Joan Gardner</a>
+													</h2>
+												</td>
+												<td>$250.00</td>
+												<td>25 Oct 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0008</a></td>
+												<td>#08</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user12.jpg" alt="User Image"></a>
+														<a href="profile.html"> Daniel Griffing</a>
+													</h2>
+												</td>
+												<td>$150.00</td>
+												<td>30 Oct 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0009</a></td>
+												<td>#09</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user8.jpg" alt="User Image"></a>
+														<a href="profile.html">Walter Roberson</a>
+													</h2>
+												</td>
+												<td>$100.00</td>
+												<td>5 Nov 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td><a href="invoice.html">#IN0010</a></td>
+												<td>#10</td>
+												<td>
+													<h2 class="table-avatar">
+														<a href="profile.html" class="avatar avatar-sm mr-2"><img
+																class="avatar-img rounded-circle"
+																src="assets/img/user/user9.jpg" alt="User Image"></a>
+														<a href="profile.html">Robert Rhodes </a>
+													</h2>
+												</td>
+												<td>$120.00</td>
+												<td>7 Nov 2019</td>
+												<td class="text-center">
+													<span class="badge badge-pill bg-success inv-badge">Paid</span>
+												</td>
+												<td class="text-right">
+													<div class="actions">
+
+														<a data-toggle="modal" href="#edit_invoice_report"
+															class="btn btn-sm bg-success-light mr-2">
+															<i class="fe fe-pencil"></i> Edit
+														</a>
+														<a class="btn btn-sm bg-danger-light" data-toggle="modal"
+															href="#delete_modal">
+															<i class="fe fe-trash"></i> Delete
+														</a>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- /Page Wrapper -->
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- Edit Details Modal -->
+	<div class="modal fade" id="edit_invoice_report" aria-hidden="true" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Edit Invoice Report</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row form-row">
+							<div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Invoice Number</label>
+									<input type="text" class="form-control" value="#INV-0001">
+								</div>
+							</div>
+							<div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Mentee ID</label>
+									<input type="text" class="form-control" value="	#01">
+								</div>
+							</div>
+							<div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Mentee Name</label>
+									<input type="text" class="form-control" value="Jonathan Doe">
+								</div>
+							</div>
+							<div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Mentee Image</label>
+									<input type="file" class="form-control">
+								</div>
+							</div>
+							<div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Total Amount</label>
+									<input type="text" class="form-control" value="$200.00">
+								</div>
+							</div>
+							<div class="col-12 col-sm-6">
+								<div class="form-group">
+									<label>Created Date</label>
+									<input type="text" class="form-control" value="29th Oct 2019">
+								</div>
+							</div>
+
+						</div>
+						<button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Edit Details Modal -->
+
+	<!-- Delete Modal -->
+	<div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<!--	<div class="modal-header">
+						<h5 class="modal-title">Delete</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>-->
+				<div class="modal-body">
+					<div class="form-content p-2">
+						<h4 class="modal-title">Delete</h4>
+						<p class="mb-4">Are you sure want to delete?</p>
+						<button type="button" class="btn btn-primary">Delete </button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Delete Modal -->
+
+	<!-- jQuery -->
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- Datatables JS -->
+	<script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/datatables/datatables.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
